@@ -12,16 +12,14 @@ public class ScrollScript : MonoBehaviour
         characterImage.GetComponent<Image>().sprite = characterSprites[index];
     }
 
-    public void ChangeWidth()
+    public void Sliders()
     {
-        float widthValue = widthSlider.GetComponent<Slider>().value;
-        characterImage.transform.localScale = new Vector2(1.1f * widthValue, 1);
-    }
+        widthSlider.onValueChanged.AddListener(delegate { Change(); });
 
-    public void ChangeHeight()
+        heightSlider.onValueChanged.AddListener(delegate { Change(); });
+    }
+    public void Change()
     {
-        float sizeValue = heightSlider.GetComponent<Slider>().value;
-        characterImage.transform.localScale = new Vector2(1, 1.1f * sizeValue);
+        characterImage.transform.localScale = new Vector3(widthSlider.value, heightSlider.value, 1f);
     }
-
 }
