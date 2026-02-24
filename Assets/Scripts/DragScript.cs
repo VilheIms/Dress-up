@@ -3,6 +3,9 @@ using UnityEngine.EventSystems;
 
 public class DragScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public delegate void DragEndedDelegate(DragScript draggableObject);
+
+    public DragEndedDelegate dragEndedCallBack;
     private RectTransform rectTransform;
     private Canvas canvas;
     SFX_Script sfxScript;
@@ -39,5 +42,6 @@ public class DragScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     public void OnEndDrag(PointerEventData data)
     {
         Debug.Log("Beidzies vilkšanas process");
+        dragEndedCallBack(this);
     }
 }
