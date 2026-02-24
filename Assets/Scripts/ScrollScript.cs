@@ -3,6 +3,10 @@ using UnityEngine.UI;
 
 public class ScrollScript : MonoBehaviour
 {
+    public GameObject hoodie;
+    public GameObject tactical;
+    public GameObject tanktop;
+    public GameObject TTsKO;
     public Image characterImage;
     public Sprite[] characterSprites;
     public Slider heightSlider;
@@ -11,7 +15,13 @@ public class ScrollScript : MonoBehaviour
     {
         characterImage.GetComponent<Image>().sprite = characterSprites[index];
     }
-
+    public void ToggleShirts(bool value)
+    {
+        hoodie.SetActive(value);
+        tactical.SetActive(value);
+        tanktop.SetActive(value);
+        TTsKO.SetActive(value);
+    }
     public void Sliders()
     {
         widthSlider.onValueChanged.AddListener(delegate { Change(); });
