@@ -32,25 +32,32 @@ public class DragScript : MonoBehaviour
         col.enabled = true;
         if(hitCollider != null && hitCollider.TryGetComponent(out ISnapScript cardDropArea))
         {
-            if (hitCollider.CompareTag(this.tag))
+            if (hitCollider.CompareTag(this.tag) || hitCollider.CompareTag("Untagged"))
             {
-            transform.SetParent(hitCollider.transform);
                 transform.SetParent(hitCollider.transform);
+
+                if (hitCollider.CompareTag(this.tag))
+                {
+                    transform.localPosition = Vector3.zero;
+                }
                 cardDropArea.OnCardDrop(this);
             }
             else
             {
-                transform.SetParent(startParent);
-                transform.position = startPosition;
+                ReturnToStart();
             }
         }
         else
         {
-            transform.position = startDragPosition;
+            ReturnToStart();
         }
 
     }
-
+    private void ReturnToStart()
+    {
+        transform.SetParent(startParent);
+        transform.position = startPosition;
+    }
     public Vector3 GetMousePositionInWorldSpace()
     {
         Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);

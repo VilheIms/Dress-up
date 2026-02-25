@@ -11,7 +11,6 @@ public class ScrollScript : MonoBehaviour
     public GameObject CamoPants;
     public GameObject PantsOtherCamo;
     public GameObject Jeans;
-    public GameObject Rags;
     public GameObject Tinfoil;
     public GameObject Headband;
     public GameObject Headphones;
@@ -51,7 +50,6 @@ public class ScrollScript : MonoBehaviour
         CamoPants.SetActive(value);
         PantsOtherCamo.SetActive(value);
         Jeans.SetActive(value);
-        Rags.SetActive(value);
     }
     public void ToggleHats(bool value)
     {

@@ -684,7 +684,7 @@ GameObject:
   - component: {fileID: 188815627}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: Hats
+  m_TagString: Other
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1453,7 +1453,7 @@ GameObject:
   - component: {fileID: 402404693}
   m_Layer: 0
   m_Name: Jeans
-  m_TagString: Hats
+  m_TagString: Pants
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2002,7 +2002,6 @@ MonoBehaviour:
   CamoPants: {fileID: 0}
   PantsOtherCamo: {fileID: 0}
   Jeans: {fileID: 0}
-  Rags: {fileID: 0}
   Tinfoil: {fileID: 633410306}
   Headband: {fileID: 1944373642}
   Headphones: {fileID: 1879826539}
@@ -2773,7 +2772,7 @@ GameObject:
   - component: {fileID: 767698591}
   m_Layer: 0
   m_Name: CamoPants
-  m_TagString: Hats
+  m_TagString: Pants
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4294,7 +4293,7 @@ GameObject:
   - component: {fileID: 1063827337}
   m_Layer: 0
   m_Name: Knife
-  m_TagString: Hats
+  m_TagString: Other
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4947,7 +4946,7 @@ GameObject:
   - component: {fileID: 1145012141}
   m_Layer: 0
   m_Name: TTskoPants
-  m_TagString: Hats
+  m_TagString: Pants
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5112,7 +5111,7 @@ Transform:
   m_GameObject: {fileID: 1153397261}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 646, y: 266.99997, z: -9720}
+  m_LocalPosition: {x: -453, y: 281, z: -9720}
   m_LocalScale: {x: 124.200005, y: 113.399994, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6962,7 +6961,7 @@ GameObject:
   - component: {fileID: 1649353369}
   m_Layer: 0
   m_Name: Rags
-  m_TagString: Hats
+  m_TagString: Pants
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7097,7 +7096,7 @@ SpriteRenderer:
   m_Size: {x: 3.3, y: 1.66}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1662913741
 GameObject:
@@ -8459,7 +8458,7 @@ Transform:
   m_GameObject: {fileID: 1944373642}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -460, y: -282, z: -9720}
+  m_LocalPosition: {x: 143, y: -350, z: -9720}
   m_LocalScale: {x: 124.2, y: 113.399994, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8998,7 +8997,7 @@ GameObject:
   - component: {fileID: 2079203355}
   m_Layer: 0
   m_Name: Beans
-  m_TagString: Hats
+  m_TagString: Other
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
