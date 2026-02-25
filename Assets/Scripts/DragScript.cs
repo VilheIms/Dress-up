@@ -5,6 +5,8 @@ public class DragScript : MonoBehaviour
     private Collider2D col;
 
     private Vector3 startDragPosition;
+    private Vector3 startPosition;
+    private Transform startParent;
 
     private void Start()
     {
@@ -19,6 +21,8 @@ public class DragScript : MonoBehaviour
     private void OnMouseDrag()
     {
         transform.position = GetMousePositionInWorldSpace();
+        startPosition = transform.position;
+        startParent = transform.parent;
     }
 
     private void OnMouseUp()
@@ -31,10 +35,15 @@ public class DragScript : MonoBehaviour
             if (hitCollider.CompareTag(this.tag))
             {
             transform.SetParent(hitCollider.transform);
-
-            cardDropArea.OnCardDrop(this);
+                transform.SetParent(hitCollider.transform);
+                transform.localPosition = Vector3.zero;
+                cardDropArea.OnCardDrop(this);
             }
-            
+            else
+            {
+                transform.SetParent(startParent);
+                transform.position = startPosition;
+            }
         }
         else
         {
