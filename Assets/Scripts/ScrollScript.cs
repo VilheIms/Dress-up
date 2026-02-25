@@ -11,8 +11,10 @@ public class ScrollScript : MonoBehaviour
     public Sprite[] characterSprites;
     public Slider heightSlider;
     public Slider widthSlider;
+    public int characterIndex;
     public void ChangeCharacterImage(int index)
     {
+        characterIndex = index;
         characterImage.GetComponent<Image>().sprite = characterSprites[index];
     }
     public void ToggleShirts(bool value)
