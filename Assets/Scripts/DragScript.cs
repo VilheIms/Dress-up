@@ -1,47 +1,45 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class DragScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragScript : MonoBehaviour
 {
-    public delegate void DragEndedDelegate(DragScript draggableObject);
+    private Collider2D col;
 
-    public DragEndedDelegate dragEndedCallBack;
-    private RectTransform rectTransform;
-    private Canvas canvas;
-    SFX_Script sfxScript;
+    private Vector3 startDragPosition;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        sfxScript = FindFirstObjectByType<SFX_Script>();
-        rectTransform = GetComponent<RectTransform>();
+        col = GetComponent<Collider2D>();
+    }
+    private void OnMouseDown()
+    {
+        startDragPosition = transform.position;
+        transform.position = GetMousePositionInWorldSpace();
     }
 
-    public void OnPointerDown(PointerEventData data)
+    private void OnMouseDrag()
     {
-        Debug.Log("Izdarīts click uz velkamā objekta");
+        transform.position = GetMousePositionInWorldSpace();
     }
 
-    public void OnBeginDrag(PointerEventData data)
+    private void OnMouseUp()
     {
-        Debug.Log("Sākts vilkšanas process");
+        col.enabled = false;
+        Collider2D hitCollider = Physics2D.OverlapPoint(transform.position);
+        col.enabled = true;
+        if(hitCollider != null && hitCollider.TryGetComponent(out ISnapScript cardDropArea))
+        {
+            cardDropArea.OnCardDrop(this);
+        }
+        else
+        {
+            transform.position = startDragPosition;
+        }
     }
 
-    public void OnDrag(PointerEventData data)
+    public Vector3 GetMousePositionInWorldSpace()
     {
-        Debug.Log("Notiek vilkšana");
-        Vector2 mousePosition = data.position;
-        mousePosition.x = Mathf.Clamp(mousePosition.x, 0 + rectTransform.rect.width / 2, Screen.width - rectTransform.rect.width / 2);
-
-        mousePosition.y = Mathf.Clamp(mousePosition.y, 0 + rectTransform.rect.height / 2, Screen.height - rectTransform.rect.height / 2);
-
-        rectTransform.position = mousePosition;
-    }
-
-    public void OnEndDrag(PointerEventData data)
-    {
-        Debug.Log("Beidzies vilkšanas process");
-        dragEndedCallBack(this);
+        Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        p.z = 0f;
+        return p;
     }
 }
