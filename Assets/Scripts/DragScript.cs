@@ -28,12 +28,15 @@ public class DragScript : MonoBehaviour
         col.enabled = true;
         if(hitCollider != null && hitCollider.TryGetComponent(out ISnapScript cardDropArea))
         {
+            transform.SetParent(hitCollider.transform);
+
             cardDropArea.OnCardDrop(this);
         }
         else
         {
             transform.position = startDragPosition;
         }
+
     }
 
     public Vector3 GetMousePositionInWorldSpace()

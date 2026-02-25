@@ -1314,13 +1314,13 @@ MonoBehaviour:
   tactical: {fileID: 0}
   tanktop: {fileID: 0}
   TTsKO: {fileID: 0}
-  characterImage: {fileID: 0}
+  characterImage: {fileID: 684285913}
   characterSprites:
   - {fileID: -7481374227488608755, guid: c16db6a37a11b60489d68125a825ae5c, type: 3}
   - {fileID: 7337296423633812610, guid: b8340c78ac8e9b24ca7ca8bbcb5fa9e6, type: 3}
   - {fileID: 3352317783719438478, guid: 80d7e309f54402942a15f29777a28781, type: 3}
-  heightSlider: {fileID: 0}
-  widthSlider: {fileID: 0}
+  heightSlider: {fileID: 1767028951}
+  widthSlider: {fileID: 1167489764}
 --- !u!1 &588110833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,7 +2133,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 949394718}
   m_Father: {fileID: 1662913742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3325,12 +3326,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949394716}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0046, y: 0.1986, z: 0}
-  m_LocalScale: {x: 3.5480905, y: 1.4229, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.49680328, y: 21.4488, z: -9720}
+  m_LocalScale: {x: 383.19376, y: 153.6732, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 684285912}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &949394719
 BoxCollider2D:
@@ -3867,8 +3868,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 15964280}
   m_HandleRect: {fileID: 15964279}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.99944246
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5051,7 +5052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015393021, y: 0.000372599}
+  m_AnchoredPosition: {x: 0.000015393021, y: -0.000028070408}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1434951272
@@ -7247,4 +7248,3 @@ SceneRoots:
   - {fileID: 174550036}
   - {fileID: 743154942}
   - {fileID: 585651428}
-  - {fileID: 949394718}
