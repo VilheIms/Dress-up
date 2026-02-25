@@ -36,7 +36,6 @@ public class DragScript : MonoBehaviour
             {
             transform.SetParent(hitCollider.transform);
                 transform.SetParent(hitCollider.transform);
-                transform.localPosition = Vector3.zero;
                 cardDropArea.OnCardDrop(this);
             }
             else

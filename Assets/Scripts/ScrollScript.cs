@@ -8,6 +8,16 @@ public class ScrollScript : MonoBehaviour
     public GameObject tactical;
     public GameObject tanktop;
     public GameObject TTsKO;
+    public GameObject CamoPants;
+    public GameObject PantsOtherCamo;
+    public GameObject Jeans;
+    public GameObject Rags;
+    public GameObject Tinfoil;
+    public GameObject Headband;
+    public GameObject Headphones;
+    public GameObject Beans;
+    public GameObject Knife;
+    public GameObject Axe;
     public Image characterImage;
     public Sprite[] characterSprites;
     public Slider heightSlider;
@@ -35,6 +45,25 @@ public class ScrollScript : MonoBehaviour
         tactical.SetActive(value);
         tanktop.SetActive(value);
         TTsKO.SetActive(value);
+    }
+    public void TogglePants(bool value)
+    {
+        CamoPants.SetActive(value);
+        PantsOtherCamo.SetActive(value);
+        Jeans.SetActive(value);
+        Rags.SetActive(value);
+    }
+    public void ToggleHats(bool value)
+    {
+        Tinfoil.SetActive(value);
+        Headband.SetActive(value);
+        Headphones.SetActive(value);
+    }
+    public void ToggleOther(bool value)
+    {
+        Beans.SetActive(value);
+        Knife.SetActive(value);
+        Axe.SetActive(value);
     }
     public void Sliders()
     {
